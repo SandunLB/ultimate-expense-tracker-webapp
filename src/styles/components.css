@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* styles/components.css */
+.form-container {
+    background-color: var(--secondary-color);
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 500px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .form-container input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .form-container button {
+    width: 100%;
+    font-size: 16px;
+  }
+  
+  .expense-list {
+    list-style: none;
+    margin: 20px auto;
+    max-width: 600px;
+  }
+  
+  .expense-list li {
+    background-color: var(--background-color);
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .expense-list button {
+    background-color: #e74c3c;
+  }
+  /* styles/components.css */
+.summary-container {
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 600px;
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  .filter-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px auto;
+    max-width: 600px;
+  }
+  
+  .filter-container input {
+    width: calc(25% - 10px);
+    padding: 10px;
+    margin-right: 10px;
+  }
+  
+  .filter-container button {
+    padding: 10px;
+  }
+  
+/* Responsive Layout */
+@media (max-width: 768px) {
+    .form-container,
+    .expense-list {
+      max-width: 90%;
+    }
+  
+    button {
+      font-size: 14px;
+      padding: 8px 10px;
+    }
+  }
+    
