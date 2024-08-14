@@ -1,8 +1,6 @@
-// components/ExpenseForm.js
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addExpense } from '../store/expenseSlice';
-import '../styles/components.css';
 
 const ExpenseForm = () => {
   const [formData, setFormData] = useState({
@@ -32,8 +30,9 @@ const ExpenseForm = () => {
   };
 
   return (
-    <div className="form-container">
-      <form onSubmit={handleSubmit}>
+    <div className="max-w-lg mx-auto mt-8 p-6 bg-white shadow-lg rounded-lg">
+      <h2 className="text-2xl font-bold text-gray-800 mb-4">Add Expense</h2>
+      <form onSubmit={handleSubmit} className="space-y-4">
         <input
           type="number"
           name="amount"
@@ -41,6 +40,7 @@ const ExpenseForm = () => {
           onChange={handleChange}
           placeholder="Amount"
           required
+          className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 transition-transform duration-300 transform hover:scale-105"
         />
         <input
           type="text"
@@ -49,6 +49,7 @@ const ExpenseForm = () => {
           onChange={handleChange}
           placeholder="Category"
           required
+          className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 transition-transform duration-300 transform hover:scale-105"
         />
         <input
           type="date"
@@ -56,6 +57,7 @@ const ExpenseForm = () => {
           value={formData.date}
           onChange={handleChange}
           required
+          className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 transition-transform duration-300 transform hover:scale-105"
         />
         <input
           type="text"
@@ -63,8 +65,14 @@ const ExpenseForm = () => {
           value={formData.description}
           onChange={handleChange}
           placeholder="Description"
+          className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 transition-transform duration-300 transform hover:scale-105"
         />
-        <button type="submit">Add Expense</button>
+        <button
+          type="submit"
+          className="w-full py-2 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-600 transition-colors duration-300"
+        >
+          Add Expense
+        </button>
       </form>
     </div>
   );
