@@ -12,6 +12,9 @@ const ExpenseForm = () => {
 
   const dispatch = useDispatch();
 
+  // Define your expense categories
+  const expenseCategories = ['Groceries', 'Utilities', 'Rent', 'Entertainment', 'Transportation', 'Healthcare', 'Dining', 'Miscellaneous'];
+
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -42,15 +45,23 @@ const ExpenseForm = () => {
           required
           className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 transition-transform duration-300 transform hover:scale-105"
         />
-        <input
-          type="text"
+
+        {/* Category Dropdown */}
+        <select
           name="category"
           value={formData.category}
           onChange={handleChange}
-          placeholder="Category"
           required
           className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 transition-transform duration-300 transform hover:scale-105"
-        />
+        >
+          <option value="">Select Category</option>
+          {expenseCategories.map((category) => (
+            <option key={category} value={category}>
+              {category}
+            </option>
+          ))}
+        </select>
+
         <input
           type="date"
           name="date"
