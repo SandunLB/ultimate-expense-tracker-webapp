@@ -3,6 +3,7 @@ import ExpenseForm from '../components/ExpenseForm';
 import ExpenseList from '../components/ExpenseList';
 import ExpenseSummary from '../components/ExpenseSummary';
 import ExpenseFilter from '../components/ExpenseFilter';
+import ExpenseCategoryChart from '../components/ExpenseCategoryChart';
 
 const Dashboard = () => {
   return (
@@ -24,6 +25,11 @@ const Dashboard = () => {
           {/* Form Section */}
           <div className="bg-white shadow-lg rounded-lg p-6 transition-transform transform hover:scale-105">
             <ExpenseForm />
+          </div>
+
+          {/* Expense Category Chart */}
+          <div className="col-span-1 lg:col-span-4  bg-white shadow-lg rounded-lg p-6 transition-transform transform hover:scale-105">
+            <ExpenseCategoryChart />
           </div>
 
           {/* Expense List Section */}
